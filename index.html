@@ -1,13 +1,27 @@
-<html>
+<html lang="en">
 <head>
     <title>Admin template build using tailwind</title>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/tailwind.css">
 </head>
-<body>
-<nav>
-  <div class="flex fl">
-      <div></div>
-  </div>
+<body class="bg-gray-100">
+<nav class="bg-white p-4 flex justify-between shadow">
+    <div class="flex items-center">
+        <img src="svg/tailwindcss-icon.svg" alt="Tailwind css logo" class="h-8 w-8 mr-2">
+         Tailwind admin
+    </div>
+    <div class="flex items-center">
+         <div class="mr-2 relative p-2">
+             <i class="fa fa-bell fa-bell-o text-2xl text-black" ></i>
+             <span class="h-4 w-4 bg-yellow-700 block rounded-full absolute top-0 right-0"></span>
+         </div>
+         <img class="rounded-full h-10" src="https://i.pravatar.cc/100 " alt="Avatar image">
+         <div class="ml-2 flex flex-col">
+             <span>John Doe  </span>
+             <span class="text-gray-500">Administrator</span>
+         </div>
+    </div>
 </nav>
+<div id="body" ></div>
 </body>
 </html>
