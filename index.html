@@ -3,25 +3,42 @@
     <title>Admin template build using tailwind</title>
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/tailwind.css">
+
 </head>
 <body class="bg-gray-100">
 <nav class="bg-white p-4 flex justify-between shadow">
     <div class="flex items-center">
         <img src="svg/tailwindcss-icon.svg" alt="Tailwind css logo" class="h-8 w-8 mr-2">
-         Tailwind admin
+        Tailwind admin
     </div>
     <div class="flex items-center">
-         <div class="mr-2 relative p-2">
-             <i class="fa fa-bell fa-bell-o text-2xl text-black" ></i>
-             <span class="h-4 w-4 bg-yellow-700 block rounded-full absolute top-0 right-0"></span>
-         </div>
-         <img class="rounded-full h-10" src="https://i.pravatar.cc/100 " alt="Avatar image">
-         <div class="ml-2 flex flex-col">
-             <span>John Doe  </span>
-             <span class="text-gray-500">Administrator</span>
-         </div>
+        <div class="mr-2 relative p-2">
+            <i class="fa fa-bell fa-bell-o text-xl text-black"></i>
+            <span class="h-4 w-4 bg-yellow-400 block rounded-full absolute top-0 right-0"></span>
+        </div>
+        <div class="flex" id="nav-dropdown-trigger" >
+            <img class="rounded-full h-10 " src="./images/user.jpeg" alt="Avatar image">
+            <a href="#" class="no-underline  ml-2 flex content-center mt-2"  >John Doe </a>
+        </div>
+        <div >
+            <div class="absolute right-0 bg-white shadow mt-6 hidden "  id="nav-dropdown" >
+                <ul>
+                    <li><a href="#" class="no-underline pl-4  py-2 hover:bg-gray-200  block text-lg "><i class="fa fa-user-o mr-1"></i> Profile </a></li>
+                    <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block text-lg"><i class="fa fa-cog mr-1"></i> Setting </a></li>
+                    <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block text-lg"><i class="fa fa-envelope-o mr-1"></i> Inbox </a></li>
+                    <li>
+                        <hr class="border-t mx-2 bg-gray-300">
+                    </li>
+                    <li>
+                      <a href="#" class="no-underline  pl-4 pr-16 py-2 hover:bg-gray-200 block text-lg"><i class="fa fa-sign-out mr-1"></i> Log out </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>
-<div id="body" ></div>
+<div id="body"></div>
+<script src="./js/script.js"></script>
+
 </body>
 </html>
