@@ -3,6 +3,7 @@
     <title>Admin template build using tailwind</title>
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
 <body class="bg-gray-100">
@@ -13,24 +14,82 @@
     </div>
     <div class="flex items-center">
         <div class="mr-2 relative p-2">
-            <i class="fa fa-bell fa-bell-o text-xl text-black"></i>
-            <span class="h-4 w-4 bg-yellow-400 block rounded-full absolute top-0 right-0"></span>
+            <i class="fa fa-bell fa-bell-o text-xl text-black dropdown-trigger" data-toggle="nav-message-dropdown"></i>
+            <span class="h-3 w-3 bg-yellow-400 block rounded-full absolute top-0 right-0"></span>
         </div>
-        <div class="flex" id="nav-dropdown-trigger" >
-            <img class="rounded-full h-10 " src="./images/user.jpeg" alt="Avatar image">
-            <a href="#" class="no-underline  ml-2 flex content-center mt-2"  >John Doe </a>
-        </div>
-        <div >
-            <div class="absolute right-0 bg-white shadow mt-6 hidden "  id="nav-dropdown" >
+        <img class="rounded-full h-10 dropdown-trigger " src="./images/user.jpeg" alt="Avatar image"
+             data-toggle="nav-dropdown">
+        <a href="#" class="no-underline  ml-2 flex content-center  dropdown-trigger" data-toggle="nav-dropdown">John
+            Doe </a>
+        <div>
+            <div class="absolute right-0 bg-white shadow mt-6 hidden " id="nav-dropdown">
                 <ul>
-                    <li><a href="#" class="no-underline pl-4  py-2 hover:bg-gray-200  block text-lg "><i class="fa fa-user-o mr-1"></i> Profile </a></li>
-                    <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block text-lg"><i class="fa fa-cog mr-1"></i> Setting </a></li>
-                    <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block text-lg"><i class="fa fa-envelope-o mr-1"></i> Inbox </a></li>
+                    <li><a href="#" class="no-underline pl-4  py-2 hover:bg-gray-200  block "><i
+                            class="fa fa-user-o mr-1 "></i> Profile </a></li>
+                    <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block "><i
+                            class="fa fa-cog mr-1"></i> Setting </a></li>
+                    <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block "><i
+                            class="fa fa-envelope-o mr-1"></i> Inbox </a></li>
                     <li>
                         <hr class="border-t mx-2 bg-gray-300">
                     </li>
                     <li>
-                      <a href="#" class="no-underline  pl-4 pr-16 py-2 hover:bg-gray-200 block text-lg"><i class="fa fa-sign-out mr-1"></i> Log out </a>
+                        <a href="#" class="no-underline  pl-4 pr-16 py-2 hover:bg-gray-200 block"><i class="fa fa-sign-out mr-1"></i> Log out </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="absolute right-0 mr-32 bg-white shadow mt-6 hidden " id="nav-message-dropdown">
+                <ul>
+                    <li>
+                        <a href="#" class="no-underline  px-4  py-2  hover:bg-gray-200 block ">
+                            <div class="flex">
+                                <img src="https://picsum.photos/50" class="rounded-full h-8 mr-2 mt-1">
+                                <div>
+                                     <div>
+                                     The woman who did the voice of Disney's Snow White...
+                                     </div>
+                                    <div class="text-gray-600 text-sm">
+                                        10 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="no-underline  px-4  py-2  hover:bg-gray-200 block ">
+                            <div class="flex">
+                                <img src="https://picsum.photos/50" class="rounded-full h-8 mr-2 mt-1">
+                                <div>
+                                     <div>
+                                         Every page on wikipedia can be found within 7 links
+                                     </div>
+                                    <div class="text-gray-600 text-sm">
+                                        20 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="no-underline  px-4  py-2  hover:bg-gray-200 block ">
+                            <div class="flex">
+                                <img src="https://picsum.photos/50" class="rounded-full h-8 mr-2 mt-1">
+                                <div>
+                                     <div>
+                                         It would take 1.2 million mosquitoes to drain blood of you
+                                     </div>
+                                    <div class="text-gray-600 text-sm">
+                                        20 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="border-t mx-2 bg-gray-300">
+                    </li>
+                    <li>
+                          <a href="#" class="block text-center py-3 ">Mark all as read</a>
                     </li>
                 </ul>
             </div>
