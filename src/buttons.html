@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+    <title>Admin template build using tailwind</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>
+<body  class="bg-gray-100 flex" >
+<div class="w-64 bg-cover" id="sidebar">
+    <ul class="list-none " id="sidebar-menu">
+        <a href="#" class="text-white mx-4  text-lg font-extrabold tracking-wider py-4 block">TAILWIND ADMIN</a>
+        <li>
+            <hr class="border-t mx-2 bg-gray-100 ">
+        </li>
+        <li>
+            <span class="text-xs  text-gray-300 px-4 py-2">COMPONENTS</span>
+        </li>
+        <li>
+            <a href="#" class="block px-4 py-2 text-white"  >Ui Elements <i class="fa fa-chevron-right float-right text-xs mt-1"></i> </a>
+            <ul class="sidebar-collapse bg-indigo-700">
+                <li>
+                    <a href="buttons.html" class="block  px-8 py-2 text-sm text-white">Buttons</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="w-full">
+    <nav class="bg-white p-4 flex justify-end shadow ">
+        <div class="flex items-center">
+            <div class="mr-2 relative p-2">
+                <i class="fa fa-bell fa-bell-o text-xl text-black dropdown-trigger" data-toggle="nav-message-dropdown"></i>
+                <span class="h-3 w-3 bg-yellow-400 block rounded-full absolute top-0 right-0"></span>
+            </div>
+            <img class="rounded-full h-10 dropdown-trigger " src="../images/user.jpeg" alt="Avatar image"
+                 data-toggle="nav-dropdown">
+            <a href="#" class="no-underline  ml-2 flex content-center  dropdown-trigger" data-toggle="nav-dropdown">John
+                Doe </a>
+            <div>
+                <div class="absolute right-0 bg-white shadow mt-6 hidden " id="nav-dropdown">
+                    <ul>
+                        <li><a href="#" class="no-underline pl-4  py-2 hover:bg-gray-200  block "><i
+                                class="fa fa-user-o mr-1 "></i> Profile </a></li>
+                        <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block "><i
+                                class="fa fa-cog mr-1"></i> Setting </a></li>
+                        <li><a href="#" class="no-underline  pl-4  py-2 hover:bg-gray-200 block "><i
+                                class="fa fa-envelope-o mr-1"></i> Inbox </a></li>
+                        <li>
+                            <hr class="border-t mx-2 bg-gray-300">
+                        </li>
+                        <li>
+                            <a href="#" class="no-underline  pl-4 pr-16 py-2 hover:bg-gray-200 block"><i class="fa fa-sign-out mr-1"></i> Log out </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="absolute right-0 mr-32 bg-white shadow mt-6 hidden " id="nav-message-dropdown">
+                    <ul>
+                        <li>
+                            <a href="#" class="no-underline  px-4  py-2  hover:bg-gray-200 block ">
+                                <div class="flex">
+                                    <img src="https://picsum.photos/50" class="rounded-full h-8 mr-2 mt-1">
+                                    <div>
+                                        <div>
+                                            The woman who did the voice of Disney's Snow White...
+                                        </div>
+                                        <div class="text-gray-600 text-sm">
+                                            10 minutes ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="no-underline  px-4  py-2  hover:bg-gray-200 block ">
+                                <div class="flex">
+                                    <img src="https://picsum.photos/50" class="rounded-full h-8 mr-2 mt-1">
+                                    <div>
+                                        <div>
+                                            Every page on wikipedia can be found within 7 links
+                                        </div>
+                                        <div class="text-gray-600 text-sm">
+                                            20 minutes ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="no-underline  px-4  py-2  hover:bg-gray-200 block ">
+                                <div class="flex">
+                                    <img src="https://picsum.photos/50" class="rounded-full h-8 mr-2 mt-1">
+                                    <div>
+                                        <div>
+                                            It would take 1.2 million mosquitoes to drain blood of you
+                                        </div>
+                                        <div class="text-gray-600 text-sm">
+                                            20 minutes ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="border-t mx-2 bg-gray-300">
+                        </li>
+                        <li>
+                            <a href="#" class="block text-center py-3 ">Mark all as read</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="pl-4 pt-2 flex flex-wrap">
+        <div class="w-1/2 pr-4">
+            <div class="bg-white my-4 px-4 py-4 shadow">
+                <h3 class="mb-3">Basic buttons</h3>
+                <button class="bg-black text-white px-4 py-2 font-bold  rounded my-4 ">Black</button>
+                <button class="bg-gray-500  hover:bg-gray-700 text-white px-4 py-2 font-bold  rounded my-4 ">Gray</button>
+                <button class="bg-red-500  hover:bg-red-700 text-white px-4 py-2 font-bold  rounded my-4 ">Red</button>
+                <button class="bg-yellow-500  hover:bg-yellow-700 text-white px-4 py-2 font-bold  rounded my-4 ">Yellow</button>
+                <button class="bg-green-500  hover:bg-green-700 text-white px-4 py-2 font-bold  rounded my-4 ">Green</button>
+                <button class="bg-blue-500  hover:bg-blue-700 text-white px-4 py-2 font-bold  rounded my-4 ">Blue</button>
+                <button class="bg-indigo-500  hover:bg-indigo-700 text-white px-4 py-2 font-bold  rounded my-4 ">Indigo</button>
+                <button class="bg-purple-500  hover:bg-purple-700 text-white px-4 py-2 font-bold  rounded my-4 ">Purple</button>
+            </div>
+        </div>
+        <div class="w-1/2 pr-4 ">
+            <div class="bg-white my-4 px-4 py-4 shadow">
+                <h3 class="mb-3">Rounded buttons</h3>
+                <button class="bg-black text-white px-4 py-2 font-bold  rounded-full my-4 ">Black</button>
+                <button class="bg-gray-500  hover:bg-gray-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Gray</button>
+                <button class="bg-red-500  hover:bg-red-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Red</button>
+                <button class="bg-yellow-500  hover:bg-yellow-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Yellow</button>
+                <button class="bg-green-500  hover:bg-green-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Green</button>
+                <button class="bg-blue-500  hover:bg-blue-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Blue</button>
+                <button class="bg-indigo-500  hover:bg-indigo-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Indigo</button>
+                <button class="bg-purple-500  hover:bg-purple-700 text-white px-4 py-2 font-bold  rounded-full my-4 ">Purple</button>
+            </div>
+        </div>
+        <div class="w-1/2 pr-4">
+            <div class="bg-white my-4 px-4 py-4 shadow">
+                <h3 class="mb-3">Disabled buttons</h3>
+                <button class="bg-black      opacity-50  cursor-not-allowed text-white px-4 py-2  font-bold  rounded-full my-4 ">Black</button>
+                <button class="bg-gray-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Gray</button>
+                <button class="bg-red-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Red</button>
+                <button class="bg-yellow-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Yellow</button>
+                <button class="bg-green-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Green</button>
+                <button class="bg-blue-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Blue</button>
+                <button class="bg-indigo-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Indigo</button>
+                <button class="bg-purple-500  opacity-50  cursor-not-allowed text-white px-4 py-2 font-bold  rounded-full my-4 ">Purple</button>
+            </div>
+        </div>
+
+        <div class="w-1/2 pr-4">
+            <div class="bg-white my-4 px-4 py-4 shadow">
+                <h3 class="mb-3">Loading buttons</h3>
+                <button class="bg-black text-white px-4 py-2 font-bold  rounded   my-4 relative btn-loading">Black</button>
+                <button class="bg-gray-500  hover:bg-gray-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Gray</button>
+                <button class="bg-red-500  hover:bg-red-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Red</button>
+                <button class="bg-yellow-500  hover:bg-yellow-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Yellow</button>
+                <button class="bg-green-500  hover:bg-green-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Green</button>
+                <button class="bg-blue-500  hover:bg-blue-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Blue</button>
+                <button class="bg-indigo-500  hover:bg-indigo-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Indigo</button>
+                <button class="bg-purple-500  hover:bg-purple-700 text-white px-4 py-2 font-bold  rounded my-4 relative btn-loading ">Purple</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

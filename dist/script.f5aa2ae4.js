@@ -117,79 +117,155 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"../js/script.js":[function(require,module,exports) {
+var nav_drop_down_trigger = document.getElementsByClassName('dropdown-trigger');
+Array.from(nav_drop_down_trigger).forEach(function (e) {
+  var toggle_name = e.getAttribute('data-toggle');
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+  if (document.getElementById(toggle_name)) {
+    e.addEventListener('click', function () {
+      return document.getElementById(toggle_name).classList.toggle('hidden');
+    });
   }
+});
 
-  return bundleURL;
-}
+window.onclick = function (e) {
+  if (!e.target.matches('.dropdown-trigger')) {
+    var elements = document.getElementsByClassName('dropdown-trigger');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+    try {
+      for (var _iterator = elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var el = _step.value;
+        hideOutsideDivClick(el.getAttribute('data-toggle'));
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
       }
     }
+  } else {
+    var target_el = e.target.getAttribute('data-toggle');
 
-    cssTimeout = null;
-  }, 50);
-}
+    var _elements = document.getElementsByClassName('dropdown-trigger');
 
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"fonts/font-awesome/css/font-awesome.min.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../fonts/fontawesome-webfont.eot":[["fontawesome-webfont.1f49c664.eot","fonts/font-awesome/fonts/fontawesome-webfont.eot"],"fonts/font-awesome/fonts/fontawesome-webfont.eot"],"./../fonts/fontawesome-webfont.woff2":[["fontawesome-webfont.d1415cf6.woff2","fonts/font-awesome/fonts/fontawesome-webfont.woff2"],"fonts/font-awesome/fonts/fontawesome-webfont.woff2"],"./../fonts/fontawesome-webfont.woff":[["fontawesome-webfont.04aad32b.woff","fonts/font-awesome/fonts/fontawesome-webfont.woff"],"fonts/font-awesome/fonts/fontawesome-webfont.woff"],"./../fonts/fontawesome-webfont.ttf":[["fontawesome-webfont.7cc54843.ttf","fonts/font-awesome/fonts/fontawesome-webfont.ttf"],"fonts/font-awesome/fonts/fontawesome-webfont.ttf"],"./../fonts/fontawesome-webfont.svg":[["fontawesome-webfont.725a6298.svg","fonts/font-awesome/fonts/fontawesome-webfont.svg"],"fonts/font-awesome/fonts/fontawesome-webfont.svg"],"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    try {
+      for (var _iterator2 = _elements[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var _el = _step2.value;
+
+        if (target_el !== _el.getAttribute('data-toggle')) {
+          hideOutsideDivClick(_el.getAttribute('data-toggle'));
+        }
+      }
+    } catch (err) {
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+          _iterator2.return();
+        }
+      } finally {
+        if (_didIteratorError2) {
+          throw _iteratorError2;
+        }
+      }
+    }
+  }
+};
+
+function hideOutsideDivClick(id) {
+  var element = document.getElementById(id);
+
+  if (!element.classList.contains('hidden')) {
+    element.classList.add('hidden');
+  }
+} // Handling sidebar
+
+
+var initial_sidebar_icon_name = 'fa-chevron-right';
+var clicked_sidebar_icon_name = 'fa-chevron-down';
+document.getElementById('sidebar-menu').addEventListener('click', function (e) {
+  var el = e.target;
+
+  if (el.parentElement) {
+    var children = el.parentElement.children;
+    var _iteratorNormalCompletion3 = true;
+    var _didIteratorError3 = false;
+    var _iteratorError3 = undefined;
+
+    try {
+      for (var _iterator3 = children[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+        var child_el = _step3.value;
+
+        if (child_el.matches('.sidebar-collapse')) {
+          var anchor_el_children = children[0].children;
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = undefined;
+
+          try {
+            for (var _iterator4 = anchor_el_children[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var anchor_child = _step4.value;
+
+              if (anchor_child.classList.contains(initial_sidebar_icon_name)) {
+                anchor_child.classList.remove(initial_sidebar_icon_name);
+                anchor_child.classList.add(clicked_sidebar_icon_name);
+              } else {
+                anchor_child.classList.add(initial_sidebar_icon_name);
+                anchor_child.classList.remove(clicked_sidebar_icon_name);
+              }
+            }
+          } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+                _iterator4.return();
+              }
+            } finally {
+              if (_didIteratorError4) {
+                throw _iteratorError4;
+              }
+            }
+          }
+
+          child_el.classList.toggle('hidden');
+        }
+      }
+    } catch (err) {
+      _didIteratorError3 = true;
+      _iteratorError3 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
+          _iterator3.return();
+        }
+      } finally {
+        if (_didIteratorError3) {
+          throw _iteratorError3;
+        }
+      }
+    }
+  }
+});
+},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34291" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35691" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -392,5 +468,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/font-awesome.min.9a58039a.js.map
+},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../js/script.js"], null)
+//# sourceMappingURL=/script.f5aa2ae4.js.map
