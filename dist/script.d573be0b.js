@@ -195,7 +195,76 @@ function hideOutsideDivClick(id) {
   if (!element.classList.contains('hidden')) {
     element.classList.add('hidden');
   }
-}
+} // Handling sidebar
+
+
+var initial_sidebar_icon_name = 'fa-chevron-right';
+var clicked_sidebar_icon_name = 'fa-chevron-down';
+document.getElementById('sidebar-menu').addEventListener('click', function (e) {
+  var el = e.target;
+
+  if (el.parentElement) {
+    var children = el.parentElement.children;
+    var _iteratorNormalCompletion3 = true;
+    var _didIteratorError3 = false;
+    var _iteratorError3 = undefined;
+
+    try {
+      for (var _iterator3 = children[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+        var child_el = _step3.value;
+
+        if (child_el.matches('.sidebar-collapse')) {
+          var anchor_el_children = children[0].children;
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = undefined;
+
+          try {
+            for (var _iterator4 = anchor_el_children[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var anchor_child = _step4.value;
+
+              if (anchor_child.classList.contains(initial_sidebar_icon_name)) {
+                anchor_child.classList.remove(initial_sidebar_icon_name);
+                anchor_child.classList.add(clicked_sidebar_icon_name);
+              } else {
+                anchor_child.classList.add(initial_sidebar_icon_name);
+                anchor_child.classList.remove(clicked_sidebar_icon_name);
+              }
+            }
+          } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+                _iterator4.return();
+              }
+            } finally {
+              if (_didIteratorError4) {
+                throw _iteratorError4;
+              }
+            }
+          }
+
+          child_el.classList.toggle('hidden');
+        }
+      }
+    } catch (err) {
+      _didIteratorError3 = true;
+      _iteratorError3 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
+          _iterator3.return();
+        }
+      } finally {
+        if (_didIteratorError3) {
+          throw _iteratorError3;
+        }
+      }
+    }
+  }
+});
 },{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -224,7 +293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43403" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40093" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

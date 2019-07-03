@@ -31,3 +31,30 @@ function hideOutsideDivClick(id) {
         element.classList.add('hidden');
     }
 }
+
+// Handling sidebar
+let initial_sidebar_icon_name='fa-chevron-right';
+let clicked_sidebar_icon_name='fa-chevron-down';
+
+document.getElementById('sidebar-menu').addEventListener('click', (e) => {
+    let el = e.target;
+    if (el.parentElement) {
+        let children = el.parentElement.children;
+        for (let child_el of children) {
+            if (child_el.matches('.sidebar-collapse')) {
+                let anchor_el_children = children[0].children;
+                for (let anchor_child of anchor_el_children) {
+                    if (anchor_child.classList.contains(initial_sidebar_icon_name)) {
+                        anchor_child.classList.remove(initial_sidebar_icon_name);
+                        anchor_child.classList.add(clicked_sidebar_icon_name);
+                    }else{
+                        anchor_child.classList.add(initial_sidebar_icon_name);
+                        anchor_child.classList.remove(clicked_sidebar_icon_name);
+                    }
+                }
+
+                child_el.classList.toggle('hidden');
+            }
+        }
+    }
+});
